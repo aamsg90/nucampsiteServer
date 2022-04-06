@@ -32,12 +32,13 @@ promotionRouter.route('/:promotionId')
     res.end(`Will send details of the promotion: ${req.params.promotionId} to you`);
 })
 .post((req, res) => {
+    res.statusCode = 403;
     res.end(`POST operation not supported on /promotions/${req.params.promotionId}`);
 })
 .put((req, res) => {
-    res.statusCode = 403;
+    res.write(`Updating the promotion: ${req.params.promotionId} `);
     res.end(`Will update the promotion: ${req.body.name} with description: ${req.body.description}`);
-})
+  })
 .delete((req, res) => {
     res.end(`Deleting promotion: ${req.params.promotionId}`);
 });
