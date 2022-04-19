@@ -8,6 +8,10 @@
  var debug = require('debug')('nucampsiteserver:server');
  var http = require('http');
  
+
+ const https = require('https');
+  const fs = require('fs');
+
  /**
   * Get port from environment and store in Express.
   */
